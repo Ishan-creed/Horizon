@@ -1,0 +1,38 @@
+<%- include("partials/header") -%>
+
+    <h2>Home</h2>
+    <h3 style="margin-bottom: 50px; font-family: sans-serif;">
+        <%= Content %>
+    </h3>
+
+
+
+
+
+            <% Contents.forEach(function(blog){ %>
+                <h3>
+                    <%= blog.Title %>
+                </h3>
+
+                <% if(blog.Post.length >40){ %>
+                     <p>
+                    <%= blog.Post.substring(0,100) + " ..." %> <a href="/posts/<%= blog._id %>">Read
+                            More</a>
+                </p>
+             <%   } else { %>
+
+                <p> <%= blog.Post %> </p>
+
+            <% } %>
+
+               
+
+                <% }) %>
+
+
+
+
+
+
+
+                    <%- include("partials/footer") -%>
